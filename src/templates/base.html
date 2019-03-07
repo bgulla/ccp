@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>ZIP code app</title>
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="/static/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <link href="/static/css/{{theme}}.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/static/css/style.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+    <!--local  <link href="static/bootstrap.min.css" rel="stylesheet" media="screen"> -->
+    <!--<link rel="stylesheet" href="https://raw.githubusercontent.com/thomaspark/bootswatch/master/dist/darkly/bootstrap.min.css" crossorigin="anonymous">-->
+  </head>
+  <body {{break_the_app}}>
+  <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+      <div class="container">
+        <a href="../" class="navbar-brand">CCP - Clarissa Cursing Portal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/api/v1" target="_blank">API</a>
+
+            </li>
+
+          </ul>
+<a class="nav-link" href="https://github.com/bgulla/ccp" target="_blank">GitHub</a>
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://wrapbootstrap.com/?ref=bsw" target="_blank"></a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- <a href="https://github.com/bgulla/mooit"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a> -->
+
+    <div class="container" style="margin-top: 9%">
+      <!-- child template -->
+      {% block content %}{% endblock %}
+    </div>
+  <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
