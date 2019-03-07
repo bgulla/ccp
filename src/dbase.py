@@ -1,6 +1,8 @@
 import sqlite3
 from datetime import datetime
 
+
+
 DATABASE_NAME = "prod.db"
 
 def create_db():
@@ -41,7 +43,7 @@ def insert_new_record():
         now = datetime.now()
         date_time = now.strftime("%m/%d/%Y, %H:%M:%S")
         cursor = conn.cursor()
-        cursor.execute("INSERT INTO projects (date) VALUES ('now')")
+        cursor.execute("INSERT INTO projects (date) VALUES ('%s')" % date_time)
         conn.commit()
         conn.close()
 
@@ -58,5 +60,22 @@ def get_count():
         size = len(cursor.fetchall())
         conn.close()
         return size
+
+def get_last_record():
+    """
+    Retuns the count of curses in the database
+    :return:
+    """
+    conn = sqlite3.connect(DATABASE_NAME)
+    if conn is not None:
+        query = "select * from projects ORDER BY id ASC"
+        cursor= conn.cursor()
+        cursor.execute(query)
+        results = (cursor.fetchall())
+        if results is None or len(results) < 1:
+            return "null"
+        date_time = results[-1][1]
+        conn.close()
+        return date_time
 
 create_db()

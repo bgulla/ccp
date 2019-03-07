@@ -23,10 +23,10 @@ api = Api(api_v1, version='1.0', title='Clarissa Cursing Portal API',
     description='A Dockerized microservice for serving the needs of absolutely no one.',)
 ns = api.namespace('curse', description='Did you know? It is 100% impossible for any Clarissa in the world to go 24 days without cursing, let alone 40 days and 40 nights.')
 
-@ns.route('/')
+@ns.route('/get')
 class CurseCount(Resource):
     '''Show a single todo item and lets you delete them'''
-    @api.doc(description='US Zip-codes only in Integer format')
+    @api.doc(description='returns the current curse count as an integer')
     def get(self):
         '''Fetch a given resource'''
         return dbase.get_count()
@@ -34,17 +34,26 @@ class CurseCount(Resource):
 @ns.route('/increment')
 class CurseCount(Resource):
     '''Show a single todo item and lets you delete them'''
-    @api.doc(description='US Zip-codes only in Integer format')
+    @api.doc(description='increments the curse count and returns the updated count as an integer')
     def post(self):
         '''Fetch a given resource'''
         dbase.insert_new_record()
         return dbase.get_count()
 
+@ns.route('/date')
+class CurseCount(Resource):
+    '''Show a single todo item and lets you delete them'''
+    @api.doc(description='returns the last time a record was inserted')
+    def get(self):
+        '''Fetch a given resource'''
+
+        return dbase.get_last_record()
+
 @app.route('/', methods=['GET', 'POST']) #this is the meat
 def home():
     if (request.method == 'POST'):
         dbase.insert_new_record()
-    return render_template('index.html', theme="darkly", current_count=dbase.get_count())
+    return render_template('index.html', theme="darkly", current_count=dbase.get_count(), last_record_date=dbase.get_last_record())
     #return render_template('404.html', theme="darkly"), 404
 
 
