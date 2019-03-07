@@ -13,7 +13,7 @@ docker run --rm \
   bgulla/ccp
 ```
 
-## Kubernetes Support
+## Kubernetes Support  
 #### lent-ccp-deployment.ccp
 ```yaml
 apiVersion: apps/v1beta2
