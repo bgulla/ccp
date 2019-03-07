@@ -1,5 +1,8 @@
 # Clarissa Cursing Portal (CCP)
 
+Because 40 days and 40 nights are a long time.
+
+
 ## Docker
 ### Building 
 ```bash
