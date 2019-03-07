@@ -4,15 +4,15 @@ MAINTAINER Brandon Gulla "hey@bgulla.dev"
 COPY ./src /app
 
 # Create no privelged user
-RUN addgroup -S dev && \
-    adduser -S -G dev dev && \
-    chown -R dev:dev /app
+#RUN addgroup -S 1001 && \
+#    adduser -S -G 1001 1001 && \
+RUN    chown -R 1001 /app
 WORKDIR /app
 
 # Install the dependencies from PIP
 RUN pip install -r requirements.txt
 
-USER dev
+USER 1001
 
 ENTRYPOINT ["python"]
 CMD ["app.py"]
